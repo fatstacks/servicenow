@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+  "jobName":"${JOBNAME}",&#13;
+  "userName":"${SNOWLOGIN}",&#13;
+  "password":"${SNOWPWD}",&#13;
+  ${CONNECTDATA}&#13;
+  "deviceLimit":${SNOWPAGESIZE},&#13;
+  "packageLimit":${SNOWPAGESIZE},&#13;
+  "connectOption":"${CONNECTMODE}",&#13;
+  "url":"${SNOWURI}api/now/table/",&#13;
+  "deviceUrl":"cmdb_ci_computer",&#13;
+  "packageUrl":"cmdb_sam_sw_install"&#13;
+}</content>
+        <function_name>Default POST</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>sRTMS - Snow - JobTrigger [ Default POST ]</qualified_name>
+        <rest_endpoint>${URI}/job-rest-service/service-now/job</rest_endpoint>
+        <rest_message display_value="sRTMS - Snow - JobTrigger">a775d34ddbac320058925901cf961940</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-01-24 20:44:17</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>8e06978ddbac320058925901cf96193b</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Default POST</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_rest_message_fn_8e06978ddbac320058925901cf96193b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-09 04:53:47</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_85303_srtms.connectTOsRTMS</api_name>
+        <client_callable>false</client_callable>
+        <description>Connect to sRTMS</description>
+        <name>connectTOsRTMS</name>
+        <script><![CDATA[var connectTOsRTMS = Class.create();
+connectTOsRTMS.prototype = {
+    initialize: function() {
+    },
+
+	getConnect: function(){
+		var responseBody = "";
+		try {
+			//var vURI = '';
+			
+			var grsetting = new GlideRecord('x_85303_srtms_settings');
+
+			grsetting.get('service','sRTMS');
+			var vURI = grsetting.url;
+			var vLogin = grsetting.login;
+			var vPwd = grsetting.password2.getDecryptedValue();
+			
+			var r = new sn_ws.RESTMessageV2('x_85303_srtms.sRTMS - Login', 'Default POST');
+			
+			r.setStringParameter('URI', vURI);
+			r.setStringParameter('LOGIN', vLogin);
+			r.setStringParameter('PWD', vPwd);
+			
+			var response = r.execute();
+			responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			
+			var js = JSON.parse(responseBody);
+			var error_code = js.error_code;
+			var success = js.success;
+									
+			if(httpStatus=="200" && error_code=="0" && success==true)
+			{	
+				var license = js.results.customer.license;
+				var sessiontoken = js.results.customer.azureToken;
+				var company_name = js.results.customer.companyName;
+				var last_run =  new GlideDateTime();
+				
+				grsetting.sessiontoken=sessiontoken;
+				grsetting.company_name=company_name;
+				grsetting.last_run = last_run;
+				grsetting.update();
+				
+				var callLog = new logTOsRTMS();
+				callLog.setLog(last_run,'Info','Connect','Success');
+				
+				
+				//responseBody="1";
+				responseBody="1";
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+		}
+		
+		return responseBody;
+	},
+	
+    type: 'connectTOsRTMS'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-01-13 00:32:24</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>49e69655db10320058925901cf961971</sys_id>
+        <sys_mod_count>50</sys_mod_count>
+        <sys_name>connectTOsRTMS</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_script_include_49e69655db10320058925901cf961971</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-02-01 22:19:03</sys_updated_on>
+    </sys_script_include>
+</record_update>

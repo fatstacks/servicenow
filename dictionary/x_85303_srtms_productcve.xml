@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="ProductCVE" max_length="40" name="x_85303_srtms_productcve" type="collection">
+        <element label="AvailableKB" max_length="1024" name="availablekb" type="string"/>
+        <element label="cpe_Edition" max_length="255" name="cpe_edition" type="string"/>
+        <element label="cpe_Manufacturer" max_length="255" name="cpe_manufacturer" type="string"/>
+        <element label="cpe_Product" max_length="255" name="cpe_product" type="string"/>
+        <element label="cpe_Update" max_length="255" name="cpe_update" type="string"/>
+        <element label="cpe_URI" max_length="255" name="cpe_uri" type="string"/>
+        <element label="cpe_URI_2_2" max_length="255" name="cpe_uri_2_2" type="string"/>
+        <element label="cpe_URI_2_3" max_length="255" name="cpe_uri_2_3" type="string"/>
+        <element label="cpe_Version" max_length="255" name="cpe_version" type="string"/>
+        <element label="cve_ID" max_length="255" name="cve_id" type="string"/>
+        <element label="cvss_Severity" max_length="255" name="cvss_severity" type="string"/>
+        <element label="cvss_Severity_Base_Score" max_length="182" name="cvss_severity_base_score" type="float"/>
+        <element label="Installed on" max_length="32" name="installed_on" reference="cmdb_ci_computer" type="reference"/>
+        <element label="isPatch" max_length="40" name="ispatch" type="boolean"/>
+        <element label="isPatchAvailable" max_length="40" name="ispatchavailable" type="boolean"/>
+        <element label="kb" max_length="1024" name="kb" type="string"/>
+        <element label="Last Run" max_length="40" name="last_run" type="glide_date_time"/>
+        <index name="index">
+            <element name="installed_on"/>
+        </index>
+    </element>
+</database>

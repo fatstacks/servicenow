@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="connect_data" table="x_85303_srtms_settings" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>connect_data</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>All</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 21:18:08</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a970048edb0e320058925901cf961902</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 21:18:08</sys_updated_on>
+            <value>All</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>connect_data</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>By Device Name</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 21:18:08</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>2970048edb0e320058925901cf961903</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 21:18:08</sys_updated_on>
+            <value>By Device Name</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>connect_data</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>By Device ID</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>2</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 21:18:08</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a170048edb0e320058925901cf961904</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 21:18:08</sys_updated_on>
+            <value>By Device ID</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>connect_data</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Last X Devices</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>3</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 21:18:08</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>2d70048edb0e320058925901cf961904</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 21:18:08</sys_updated_on>
+            <value>Last X Devices</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>connect_data</element>
+            <name>x_85303_srtms_settings</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 21:18:08</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>70f5edf5db3232000a7addd0cf961936</sys_id>
+            <sys_mod_count>35</sys_mod_count>
+            <sys_name>connect_data</sys_name>
+            <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+            <sys_update_name>sys_choice_x_85303_srtms_settings_connect_data</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-12 22:36:39</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

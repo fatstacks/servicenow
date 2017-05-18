@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Settings" max_length="40" name="x_85303_srtms_settings" type="collection">
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element default="true" label="Application Vulnerabilities" max_length="40" name="application_vulnerabilities" type="boolean"/>
+        <element label="Access Key" max_length="255" name="aws_access_key" type="string"/>
+        <element default="SELECT res.instanceid as DeviceID,'' as DeviceDomain,res.computername DeviceName,'' as UserDomain,'' as UserName,'' as IPAddress,'' as MacAddress,'' as LastScan,'' as Active,1 as IsVirtual,'' as IsLPAR,'' as Manufacturer,'' as Model, res.instanceid as SerialNumber,'' as OSManufacturer,res.platformname as OSName,'' as OSServicePack,res.platformversion as OSVersion,'' as OSBuildNumber,'' as OSBit,'' as OSInstallDate,'' as NumPhysicalCPUs,'' as NumLogicalCPUs,'' as NumCores,'' as CPUBit FROM &lt;schema_name&gt;.aws_instanceinformation res" label="Device SQL" max_length="2048" name="aws_device_sql" type="string"/>
+        <element label="AWS Job Id" max_length="100" name="aws_job_id" type="string"/>
+        <element default="SELECT app.resourceID as DeviceID,'' as PkgID,app.publisher as PkgManufacturer,app.name as PkgDisplayName,app.version as PkgVersion,CASE app.architecture WHEN 'i386' THEN '32' WHEN 'x86_64' THEN '64' ELSE app.architecture END as PkgBit,app.installedtime as InstallDate FROM &lt;schema_name&gt;.aws_application app UNION ALL SELECT kb.resourceID as DeviceID, kb.hotfixid as PkgID,'' as PkgManufacturer,'' as PkgDisplayName,'' as PkgVersion,'' as PkgBit,kb.installedtime as InstallDate FROM &lt;schema_name&gt;.aws_windowsupdate kb" label="Package SQL" max_length="2048" name="aws_package_sql" type="string"/>
+        <element choice="1" default="us-east-1" label="Region" max_length="255" name="aws_region" type="choice">
+            <choice>
+                <element label="US East (N. Virginia)" sequence="0" value="us-east-1"/>
+                <element label="US East (Ohio)" sequence="1" value="us-east-2"/>
+                <element label="US West (N. California)" sequence="2" value="us-west-1"/>
+                <element label="US West (Oregon)" sequence="3" value="us-west-2"/>
+                <element label="Canada (Central)" sequence="4" value="ca-central-1"/>
+                <element label="EU (Ireland)" sequence="5" value="eu-west-1"/>
+                <element label="EU (Frankfurt)" sequence="6" value="eu-central-1"/>
+                <element label="EU (London)" sequence="7" value="eu-west-2"/>
+                <element label="Asia Pacific (Singapore)" sequence="8" value="ap-southeast-1"/>
+                <element label="Asia Pacific (Sydney)" sequence="9" value="ap-southeast-2"/>
+                <element label="Asia Pacific (Seoul)" sequence="10" value="ap-northeast-2"/>
+                <element label="Asia Pacific (Tokyo)" sequence="11" value="ap-northeast-1"/>
+                <element label="Asia Pacific (Mumbai)" sequence="12" value="ap-south-1"/>
+                <element label="South America (Sao Paulo)" sequence="13" value="sa-east-1"/>
+            </choice>
+        </element>
+        <element label="S3 Staging Directory" max_length="255" name="aws_s3_staging_directory" type="string"/>
+        <element label="Schema Name" max_length="255" name="aws_schema_name" type="string"/>
+        <element label="Secret Access Key" max_length="255" name="aws_secret_access_key" type="password2"/>
+        <element label="AWS Source" max_length="40" name="aws_source" type="boolean"/>
+        <element label="AWS Source Status" max_length="40" name="aws_source_status" type="boolean"/>
+        <element label="Company Name" max_length="255" name="company_name" type="string"/>
+        <element choice="3" default="All" label="Connect Data" max_length="40" name="connect_data" type="choice">
+            <choice>
+                <element label="All" sequence="0" value="All"/>
+                <element label="By Device Name" sequence="1" value="By Device Name"/>
+                <element label="By Device ID" sequence="2" value="By Device ID"/>
+                <element label="Last X Devices" sequence="3" value="Last X Devices"/>
+            </choice>
+        </element>
+        <element choice="3" default="Full" label="Connect Mode" max_length="40" name="connect_mode" type="choice">
+            <choice>
+                <element label="Full" sequence="0" value="Full"/>
+                <element label="Partial" sequence="1" value="Partial"/>
+                <element label="Anonym" sequence="2" value="Anonym"/>
+            </choice>
+        </element>
+        <element choice="3" default="2.2" label="Default CPE Version" max_length="40" name="cpe_version" type="choice">
+            <choice>
+                <element label="2.2" sequence="0" value="2.2"/>
+                <element label="2.3" sequence="1" value="2.3"/>
+            </choice>
+        </element>
+        <element default="true" label="Create Missing CPE" max_length="40" name="create_missing_cpes" type="boolean"/>
+        <element label="Create Missing Device" max_length="40" name="create_missing_device" type="boolean"/>
+        <element label="Create Missing Manufacturer" max_length="40" name="create_missing_manufacturer" type="boolean"/>
+        <element label="Create Missing NVD" max_length="40" name="create_missing_nvds" type="boolean"/>
+        <element label="Create Missing Software Discovery Model" max_length="40" name="create_missing_software_discovery_models" type="boolean"/>
+        <element label="Create Missing Software Installation" max_length="40" name="create_missing_software_installation" type="boolean"/>
+        <element label="Create Missing Model" max_length="40" name="creaye_missing_model" type="boolean"/>
+        <element choice="3" default="1" label="Day" max_length="40" name="day" type="choice">
+            <choice>
+                <element label="Monday" sequence="0" value="1"/>
+                <element label="Tuesday" sequence="1" value="2"/>
+                <element label="Wednesday" sequence="2" value="3"/>
+                <element label="Thursday" sequence="3" value="4"/>
+                <element label="Friday" sequence="4" value="5"/>
+                <element label="Saturday" sequence="5" value="6"/>
+                <element label="Sunday" sequence="6" value="7"/>
+            </choice>
+        </element>
+        <element default="true" label="Delete Old Records Automatically" max_length="40" name="delete_old_records_automatically" type="boolean"/>
+        <element label="Device  List (ID/Name)" max_length="1024" name="device_list_id_name" type="string"/>
+        <element default="200" label="API Page Size" max_length="40" name="fatstacks_api_page_size" type="integer"/>
+        <element label="JobID" max_length="100" name="jobid" type="string"/>
+        <element label="Job Name" max_length="255" name="job_name" type="string"/>
+        <element label="Last Run" max_length="40" name="last_run" read_only="true" type="glide_date_time"/>
+        <element choice="3" default="1000" label="Last X Devices" max_length="40" name="last_x_devices" type="choice">
+            <choice>
+                <element label="10" sequence="0" value="10"/>
+                <element label="50" sequence="1" value="50"/>
+                <element label="100" sequence="2" value="100"/>
+                <element label="500" sequence="3" value="500"/>
+                <element label="1000" sequence="4" value="1000"/>
+                <element label="5000" sequence="5" value="5000"/>
+                <element label="10000" sequence="6" value="10000"/>
+            </choice>
+        </element>
+        <element label="License" max_length="255" name="license" type="string"/>
+        <element label="Login" max_length="255" name="login" type="string"/>
+        <element choice="3" default="All" label="Module" max_length="40" name="module" type="choice">
+            <choice>
+                <element label="Asset" sequence="0" value="Asset"/>
+                <element label="Security" sequence="1" value="Security"/>
+                <element label="All" sequence="2" value="All"/>
+            </choice>
+        </element>
+        <element label="Operating System Vulnerabilities" max_length="40" name="operating_system_vulnerabilities" type="boolean"/>
+        <element label="Password" max_length="255" name="password" type="password"/>
+        <element label="Password" max_length="255" name="password2" type="password2"/>
+        <element choice="1" label="Run(old)" max_length="40" name="run" type="choice">
+            <choice/>
+        </element>
+        <element choice="3" default="1" label="Day" max_length="40" name="run_day_of_month" type="choice">
+            <choice>
+                <element label="1" sequence="0" value="1"/>
+                <element label="2" sequence="1" value="2"/>
+                <element label="3" sequence="2" value="3"/>
+                <element label="4" sequence="3" value="4"/>
+                <element label="5" sequence="4" value="5"/>
+                <element label="6" sequence="5" value="6"/>
+                <element label="7" sequence="6" value="7"/>
+                <element label="8" sequence="7" value="8"/>
+                <element label="9" sequence="8" value="9"/>
+                <element label="10" sequence="9" value="10"/>
+                <element label="11" sequence="10" value="11"/>
+                <element label="12" sequence="11" value="12"/>
+                <element label="13" sequence="12" value="13"/>
+                <element label="14" sequence="13" value="14"/>
+                <element label="15" sequence="14" value="15"/>
+                <element label="16" sequence="15" value="16"/>
+                <element label="17" sequence="16" value="17"/>
+                <element label="18" sequence="17" value="18"/>
+                <element label="19" sequence="18" value="19"/>
+                <element label="20" sequence="19" value="20"/>
+                <element label="21" sequence="20" value="21"/>
+                <element label="22" sequence="21" value="22"/>
+                <element label="23" sequence="22" value="23"/>
+                <element label="24" sequence="23" value="24"/>
+                <element label="25" sequence="24" value="25"/>
+                <element label="26" sequence="25" value="26"/>
+                <element label="27" sequence="26" value="27"/>
+                <element label="28" sequence="27" value="28"/>
+                <element label="29" sequence="28" value="29"/>
+                <element label="30" sequence="29" value="30"/>
+                <element label="31" sequence="30" value="31"/>
+            </choice>
+        </element>
+        <element label="Period" max_length="40" name="run_period2" type="glide_duration"/>
+        <element label="Start" max_length="40" name="run_start" type="glide_date_time"/>
+        <element choice="3" default="daily" label="Run" max_length="40" name="run_type" type="choice">
+            <choice>
+                <element label="Daily" sequence="0" value="daily"/>
+                <element label="Weekly" sequence="1" value="weekly"/>
+                <element label="Monthly" sequence="2" value="monthly"/>
+                <element label="Periodically" sequence="3" value="periodically"/>
+                <element label="Once" sequence="4" value="once"/>
+            </choice>
+        </element>
+        <element label="Schedule(old)" max_length="40" name="schedule" type="boolean"/>
+        <element label="Schedule(old2)" max_length="40" name="scheduler_active_inactive" type="boolean"/>
+        <element label="Service" max_length="255" name="service" read_only="true" type="string"/>
+        <element default="true" label="ServiceNow Source" max_length="40" name="servicenow" type="boolean"/>
+        <element default="100" label="ServiceNow API Page Size" max_length="40" name="servicenow_api_page_size" type="integer"/>
+        <element label="ServiceNow Login" max_length="255" name="servicenow_login" type="string"/>
+        <element label="ServiceNow Password" max_length="255" name="servicenow_password" type="password2"/>
+        <element label="ServiceNow Source Status" max_length="40" name="servicenow_source_status" type="boolean"/>
+        <element label="Session Token" max_length="1024" name="sessiontoken" type="string"/>
+        <element default="true" label="Severity Critical" max_length="40" name="severity_critical" type="boolean"/>
+        <element default="true" label="Severity High" max_length="40" name="severity_high" type="boolean"/>
+        <element label="Severity Low" max_length="40" name="severity_low" type="boolean"/>
+        <element label="Severity Medium" max_length="40" name="severity_medium" type="boolean"/>
+        <element label="Status" max_length="255" name="status" read_only="true" type="string"/>
+        <element label="Status Internal" max_length="255" name="status_internal" type="string"/>
+        <element label="Time" max_length="40" name="time" type="glide_time"/>
+        <element label="URL" max_length="255" name="url" type="url"/>
+    </element>
+</database>

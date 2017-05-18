@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_85303_srtms.runSRTMS</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>runSRTMS</name>
+        <script><![CDATA[var runSRTMS = Class.create();
+runSRTMS.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    //initialize: function() {
+    //},
+	
+	getSRTMS: function(){
+		
+		var responseBody = "";
+		try {
+		
+			var callProcessSRTMS = new processSRTMS();
+			var responseProcessSRTMS = callProcessSRTMS.getProcessSRTMS(true);
+			if(responseProcessSRTMS != "1")
+			{
+				responseBody = responseProcessSRTMS;
+				return responseBody;
+			}
+		
+			responseBody=1;
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+		}
+		
+		return responseBody;
+	},
+	
+		/*
+		var responseBody = "";
+		try {
+			
+			var grsetting = new GlideRecord('x_85303_srtms_settings');
+			grsetting.get('service','sRTMS');
+			var vDeleteOldRec = grsetting.delete_old_records_automatically;
+			var vSnowSrc = grsetting.servicenow;
+			grsetting.status = "Running";
+			grsetting.update();
+		
+			var callConnect = new connectTOsRTMS();
+			var responseConnect = callConnect.getConnect();
+			if(responseConnect != "1")
+			{
+				responseBody = responseConnect;
+				return responseBody;
+			}
+			
+			if(vSnowSrc)
+			{
+				
+				var trigJob = new triggerJobTOsRTMS();
+				var responseTrigJob = trigJob.getTriggerJob();
+				if(responseTrigJob != "1")
+				{
+					responseBody = responseTrigJob;
+					return responseBody;
+				}
+				
+				var statusJob = new statusJobTOsRTMS();
+				var responseStatusJob = statusJob.getStatusJob();
+				if(responseStatusJob == "2")
+				{
+					responseBody = responseStatusJob;
+					
+					var schStatus = new GlideRecord('sysauto_script');
+					schStatus.get('name', 'schedulerJobStatusTOsRTMS');
+					schStatus.active=true;
+					schStatus.update();
+
+					grsetting.status = 'Desactivate Scheduler';
+					grsetting.update();
+					
+					return responseBody;
+				}
+				else if(responseStatusJob != "1")
+				{
+					responseBody = responseStatusJob;
+					return responseBody;
+				}
+				
+				
+			}
+			*/
+			/*
+			var callPull = new pullFROMsRTMS();
+			var responsePull = callPull.getPull();
+			
+			if(responsePull != "1")
+			{
+				responseBody = responsePull;
+				return responseBody;
+			}
+
+			if(vDeleteOldRec)
+			{
+				var delOldRec = new deleteOldRecords();
+				var responseDeleletoldRec = delOldRec.getDelete();
+				if(responseDeleletoldRec != "1")
+				{
+					responseBody = responseDeleletoldRec;
+					return responseBody;
+				}
+			}
+			*/
+		/*
+			grsetting.status = "Completed";
+			grsetting.update();
+			
+			responseBody=1;
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+		}
+		
+		return responseBody;
+	},
+	*/
+    type: 'runSRTMS'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-01-18 19:30:00</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>401b4c93dbd8320058925901cf961905</sys_id>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>runSRTMS</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_script_include_401b4c93dbd8320058925901cf961905</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-01-25 19:15:43</sys_updated_on>
+    </sys_script_include>
+</record_update>

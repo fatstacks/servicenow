@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="ServiceNow Source" section_id="0267ae09db51320058925901cf9619f0" sys_domain="global" table="x_85303_srtms_settings" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>servicenow</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 22:53:42</sys_created_on>
+            <sys_id>2956d48edb4e320058925901cf9619a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ServiceNow Source" display_value="ServiceNow Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">0267ae09db51320058925901cf9619f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 22:53:42</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>servicenow_login</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 22:53:42</sys_created_on>
+            <sys_id>a956d48edb4e320058925901cf9619a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ServiceNow Source" display_value="ServiceNow Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">0267ae09db51320058925901cf9619f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 22:53:42</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>servicenow_password</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 22:53:42</sys_created_on>
+            <sys_id>2d56d48edb4e320058925901cf9619a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ServiceNow Source" display_value="ServiceNow Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">0267ae09db51320058925901cf9619f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 22:53:42</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>servicenow_api_page_size</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 22:53:42</sys_created_on>
+            <sys_id>ad56d48edb4e320058925901cf9619a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ServiceNow Source" display_value="ServiceNow Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">0267ae09db51320058925901cf9619f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 22:53:42</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 22:53:42</sys_created_on>
+            <sys_id>2156d48edb4e320058925901cf9619a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ServiceNow Source" display_value="ServiceNow Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">0267ae09db51320058925901cf9619f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 22:53:42</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>connect_mode</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 22:53:42</sys_created_on>
+            <sys_id>a156d48edb4e320058925901cf9619a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ServiceNow Source" display_value="ServiceNow Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">0267ae09db51320058925901cf9619f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 22:53:42</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>connect_data</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 22:53:42</sys_created_on>
+            <sys_id>2556d48edb4e320058925901cf9619a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ServiceNow Source" display_value="ServiceNow Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">0267ae09db51320058925901cf9619f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 22:53:42</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>device_list_id_name</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 22:53:42</sys_created_on>
+            <sys_id>a556d48edb4e320058925901cf9619a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ServiceNow Source" display_value="ServiceNow Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">0267ae09db51320058925901cf9619f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 22:53:42</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>last_x_devices</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-11 22:53:42</sys_created_on>
+            <sys_id>2956d48edb4e320058925901cf9619a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ServiceNow Source" display_value="ServiceNow Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">0267ae09db51320058925901cf9619f0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-11 22:53:42</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>ServiceNow Source</caption>
+            <header>false</header>
+            <name>x_85303_srtms_settings</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-03 00:06:30</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>0267ae09db51320058925901cf9619f0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>ServiceNow Source</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+            <sys_update_name>sys_ui_section_0267ae09db51320058925901cf9619f0</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-03 00:06:30</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

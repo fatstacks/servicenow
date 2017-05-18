@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>Run sRTMS</action_name>
+        <active>true</active>
+        <client>false</client>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <hint/>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <name>Run sRTMS</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[(function executeUIAction(current, previous) {
+	
+	current.status = "Pending";
+	current.update();
+		
+	//Activate Scheduler
+	var schStatus = new GlideRecord('sysauto_script');
+	schStatus.get('name', 'schedulerRunSRTMS');
+	var vCurActive = schStatus.active;
+	var vCurRunType = schStatus.run_type;
+	var vCurRunStart = schStatus.run_start;
+		
+	schStatus.active=true;
+	schStatus.run_type = "once";
+	
+	var gdt = new GlideDateTime();
+	gdt.addSeconds(10);
+	schStatus.run_start = gdt;
+	schStatus.update();
+	
+	//Restore Scheduler
+	schStatus.active=vCurActive;
+	schStatus.run_type=vCurRunType;
+	schStatus.run_start=vCurRunStart;
+	schStatus.update();
+	
+
+action.setRedirectURL(current);
+})(current, typeof previous != 'undefined' ?  previous : null);
+
+/*
+function setButton(butname,style) {
+   var refs = document.getElementsByTagName("BUTTON");
+   if (refs) {
+       for (var i=0; i < refs.length; i++) {
+           var teststr = refs[i].innerHTML.toString();
+           if (teststr.match(butname)) {
+               refs[i].style.display = style;
+           }
+       }
+   }
+   return true;
+}
+*/
+/*function onRunSRTMS(){
+	var responseBody = "";
+	try {
+	
+		var ga = new GlideAjax('runSRTMS');
+		ga.addParam('sysparm_name','getSRTMS'); 
+		ga.getXML(setRunSRTMS);
+		
+		alert('in progress');
+		//var callAP = new runSRTMS();
+		//var responseBD = callAP.getSRTMS();
+		//gs.addErrorMessage(responseBD);
+	}
+	catch(ex) {
+		var message = ex.getMessage();
+		responseBody = ex.getMessage();
+		gs.addErrorMessage(message);
+	}
+	
+}
+
+function setRunSRTMS(response) {
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+	if(answer=="1")	{
+		alert(answer); 
+		alert("Work"); 
+		//gs.addInfoMessage('sRTMS Job Completed');
+	}
+	else{
+		alert(answer); 
+		alert("Error"); 
+		//gs.addErrorMessage(answer);
+	}
+
+	
+}
+*/]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-12-21 20:46:03</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fd60945edb77620058925901cf961942</sys_id>
+        <sys_mod_count>121</sys_mod_count>
+        <sys_name>Run sRTMS</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_ui_action_fd60945edb77620058925901cf961942</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-02-06 00:39:40</sys_updated_on>
+        <table>x_85303_srtms_settings</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

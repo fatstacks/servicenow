@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_85303_srtms.pullFROMsRTMS</api_name>
+        <client_callable>false</client_callable>
+        <description>Pull from sRTMS</description>
+        <name>pullFROMsRTMS</name>
+        <script><![CDATA[var pullFROMsRTMS = Class.create();
+pullFROMsRTMS.prototype = {
+    initialize: function() {
+    },
+	
+	getAPI: function(vURI,vSessionToken,vJobName,vPageNumber,vLastRun,vCreateDevice,vCreateNvd,vCPEVersion,vCreateCPE,vCreateSwDiscMod,vCreateSwInst,vModule,vPageSize,vCreateMan,vCreateMod,vSev,vPart){
+		
+		var responseBody = "";
+		var responseObj = {};
+			 
+		try {
+			
+			var r = new sn_ws.RESTMessageV2('x_85303_srtms.sRTMS - Pull', 'Default POST');
+
+			r.setStringParameter('URI', vURI);
+			r.setStringParameter('SESSIONTOKEN', vSessionToken);
+			r.setStringParameter('JOBNAME', vJobName);
+			r.setStringParameter('PAGENUMBER', vPageNumber);
+			r.setStringParameter('PAGESIZE', vPageSize);
+			r.setStringParameterNoEscape('SEVERITY', vSev);
+			r.setStringParameterNoEscape('CPEPART', vPart);
+
+			var response = r.execute();
+			responseBody = response.getBody();
+			responseObj.responseBody = responseBody;
+			var httpStatus = response.getStatusCode();
+
+			var js = JSON.parse(responseBody);
+			var error_code = js.error_code;
+			var success = js.success;
+			
+			if(httpStatus=="200" && error_code=="0" && success==true)
+			{
+				
+				var data = js.results.data;
+
+				responseObj.totalElements = data.totalElements;
+				responseObj.totalPage = data.totalPage;
+				responseObj.pageNumber = data.pageNumber;
+
+				var content = js.results.data.content;
+
+				for (var i = 0;i < content.length ; i++){
+
+					var deviceID = content[i]._source.deviceID;
+					var deviceName = content[i]._source.deviceName;
+					var deviceDomain = content[i]._source.deviceDomain;
+					var deviceSerialNumber = content[i]._source.serialNumber;
+					var deviceManufacturer = content[i]._source.manufacturer;
+					var deviceModel = content[i]._source.model;
+					var cpe_uri_2_2 = content[i]._source.cpe_URI_2_2;
+					var cpe_uri_2_3 = content[i]._source.cpe_URI_2_3;
+					var cve_id = content[i]._source.cve_ID;
+					var pkgInfos = content[i]._source.pkgInfos;
+					
+					var cpe_uri = cpe_uri_2_2;
+					
+					if(vCPEVersion=="2.3")
+					{
+						cpe_uri = cpe_uri_2_3;
+					}
+
+					//grProductCVE.userDomain = data[i]._source.userDomain;
+					//grProductCVE.userName = data[i]._source.userName;
+					//var jobId = data[i]._source.jobId;
+					//var pkgInfos = data[i]._source.pkgInfos;
+					//var _type = data[i]._type;
+
+
+					var grComputer = new GlideRecord('cmdb_ci_computer');
+					var compf=true;
+					if(!grComputer.get('sys_id',deviceID))
+					{
+						compf=false;
+						
+						//var queryComputerString = "name="+deviceName+"^os_domain="+deviceDomain+"";
+						var queryComputerString = "name="+deviceName+"^os_domain="+deviceDomain+"^serial_number="+deviceSerialNumber+"";
+						grComputer = new GlideRecord('cmdb_ci_computer');
+						grComputer.addEncodedQuery(queryComputerString);
+						grComputer.query();
+						
+
+						while (grComputer.next()) {
+							//gs.addInfoMessage(gr.number);
+							compf = true;
+							break;
+						}
+						if(!compf && vCreateDevice)
+						{
+							
+							//Hardware Manufacturer
+							var grManufacturer = new GlideRecord('core_company');
+							var manf=true;
+							if(!grManufacturer.get('name',deviceManufacturer))
+							{
+								manf=false;
+
+								if(!manf && vCreateMan)
+								{
+									grManufacturer.initialize();
+									grManufacturer.name=deviceManufacturer;
+									grManufacturer.manufacturer=true;
+									grManufacturer.insert();
+									manf = true;
+								}
+							}
+							
+							//Hardware Model
+							var grModel = new GlideRecord('cmdb_hardware_product_model');
+							var modf=true;
+							var mod_display_name = deviceManufacturer+' '+deviceModel;
+							if(!grModel.get('display_name',mod_display_name))
+							{
+								modf=false;
+
+								if(!modf && vCreateMod)
+								{
+									grModel.initialize();
+									grModel.display_name=mod_display_name;
+									grModel.name=deviceModel;
+									
+									if(manf)
+										grModel.manufacturer=grManufacturer.sys_id;
+									
+									grModel.insert();
+									modf = true;
+								}
+							}
+							
+							grComputer.initialize();
+							grComputer.name=deviceName;
+							grComputer.os_domain=deviceDomain;
+							grComputer.serial_number=deviceSerialNumber;
+							grComputer.os=content[i]._source.osname;
+							grComputer.os_service_pack=content[i]._source.osservicePack;
+							grComputer.ip_address=content[i]._source.ipaddress;
+							grComputer.mac_address=content[i]._source.macAddress;
+							grComputer.last_discovered=content[i]._source.lastScan;
+							grComputer.virtual=content[i]._source.isVirtual;
+							
+							if(manf)
+								grComputer.manufacturer=grManufacturer.sys_id;
+							
+							if(modf)
+								grComputer.model_id=grModel.sys_id;
+							
+							grComputer.os_address_width=content[i]._source.osbit;
+							grComputer.install_date=content[i]._source.osinstallDate;
+							
+							//assigned_to
+							grComputer.insert();
+							compf = true;
+						}
+					}
+					
+					if(compf)
+					{
+						var installed_on = grComputer.sys_id;
+						
+						// fatstacks table
+						if(vModule == "All" || vModule == "Asset")
+						{
+							var grProductCVE = new GlideRecord('x_85303_srtms_productcve');
+
+							var queryProductCVE = "installed_on="+installed_on+"^cpe_uri_2_2="+cpe_uri_2_2+"^cve_id="+cve_id+"";
+							grProductCVE.addEncodedQuery(queryProductCVE);
+							grProductCVE.query();
+
+							while (grProductCVE.next()) {
+								break;
+							}
+
+							grProductCVE.cpe_edition = content[i]._source.cpe_Edition;
+							grProductCVE.cpe_manufacturer = content[i]._source.cpe_Manufacturer;
+							grProductCVE.cpe_product = content[i]._source.cpe_Product;
+							grProductCVE.cpe_uri = cpe_uri;
+							grProductCVE.cpe_uri_2_2 = cpe_uri_2_2;
+							grProductCVE.cpe_uri_2_3 = cpe_uri_2_3;
+							grProductCVE.cpe_update = content[i]._source.cpe_Update;
+							grProductCVE.cpe_version = content[i]._source.cpe_Version;
+							grProductCVE.cve_id = cve_id;
+							grProductCVE.cvss_severity = content[i]._source.cvss_Severity;
+							grProductCVE.cvss_severity_base_score = content[i]._source.cvss_severity_base_score;
+
+							grProductCVE.ispatch = content[i]._source.isPatch;
+							grProductCVE.kb = content[i]._source.kb;
+							grProductCVE.ispatchavailable = content[i]._source.isPatchAvailable;
+							grProductCVE.availablekb = content[i]._source.availableKB;
+							
+							grProductCVE.installed_on = installed_on;
+							grProductCVE.last_run = vLastRun;
+
+							grProductCVE.update();
+						}
+						
+						// SN vulnerability item table
+						if(vModule == "All" || vModule == "Security")
+						{					
+							//NVD
+							var grVulNvd = new GlideRecord('sn_vul_nvd_entry');
+							var nvdf=true;
+							if(!grVulNvd.get('id',cve_id))
+							{
+								nvdf=false;
+
+								if(!nvdf && vCreateNvd)
+								{
+									grVulNvd.initialize();
+									grVulNvd.id=cve_id;
+									grVulNvd.summary=content[i]._source.cve_Description;
+									grVulNvd.score=content[i]._source.cvss_severity_base_score;
+									grVulNvd.source='http://nvd.nist.gov';
+									grVulNvd.insert();
+
+									nvdf = true;
+								}
+
+							}
+
+							//Software Discovery Model
+							var grSwDiscMod = new GlideRecord('cmdb_sam_sw_discovery_model');
+							var swdiscmodf=false;
+
+							var pkgDisplayName = '';
+							var pkgManufacturer = '';
+							var pkgVersion = '';
+							var pkgDevicePkgID = '';
+
+							for (var j = 0;j < pkgInfos.length ; j++){
+
+								pkgDisplayName = pkgInfos[j].pkgDisplayName;
+								pkgManufacturer = pkgInfos[j].pkgManufacturer;
+								pkgVersion = pkgInfos[j].pkgVersion;
+								pkgDevicePkgID = '';
+
+								var pkgPrimaryKey=pkgManufacturer+'.'+pkgDisplayName+'..'+pkgVersion+'.';
+								//var querySwDiscMod ="display_name="+pkgDisplayName+"^publisher="+pkgManufacturer+"^version="+pkgVersion+"";
+								//grSwDiscMod.addEncodedQuery(querySwDiscMod);
+								//grSwDiscMod.query();
+
+								//while (grSwDiscMod.next()) {
+								//	swdiscmodf=true;
+								//	break;
+								//}
+
+								//if(!swdiscmodf && vCreateSwDiscMod)
+								if(!grSwDiscMod.get('primary_key',pkgPrimaryKey) && vCreateSwDiscMod)
+								{
+									grSwDiscMod.initialize();
+									grSwDiscMod.display_name=pkgDisplayName;
+									grSwDiscMod.publisher=pkgManufacturer;
+									grSwDiscMod.version=pkgVersion;
+									grSwDiscMod.primary_key=pkgPrimaryKey;
+
+									grSwDiscMod.insert();
+									swdiscmodf = true;
+								}
+								//We only take the first occurence for now
+								break;
+
+							}
+							//Software Vulnerability
+							var grVulSw = new GlideRecord('sn_vul_software');
+							var vulswf=true;
+							if(!grVulSw.get('raw_product',cpe_uri))
+							{
+								vulswf=false;
+
+								if(!vulswf && vCreateCPE)
+								{
+									grVulSw.initialize();
+									grVulSw.raw_product=cpe_uri;
+
+									if(content[i]._source.cpe_Title != "*")
+									{
+										grVulSw.display_name=content[i]._source.cpe_Title;
+									}
+									else
+									{
+										grVulSw.display_name="";
+									}
+									if(content[i]._source.cpe_Manufacturer != "*")
+									{
+										grVulSw.publisher=content[i]._source.cpe_Manufacturer;
+									}
+									else
+									{
+										grVulSw.publisher="";
+									}
+
+									if(content[i]._source.cpe_Product != "*")
+									{
+										grVulSw.model=content[i]._source.cpe_Product;
+									}
+									else
+									{
+										grVulSw.model="";
+									}
+
+									if(content[i]._source.cpe_Version != "*")
+									{
+										grVulSw.version=content[i]._source.cpe_Version;
+									}
+									else
+									{
+										grVulSw.version="";
+									}
+
+									if(content[i]._source.cpe_Edition != "*")
+									{
+										grVulSw.edition=content[i]._source.cpe_Edition;
+									}
+									else
+									{
+										grVulSw.edition="";
+									}
+									if(swdiscmodf)
+									{
+										grVulSw.discovery_model=grSwDiscMod.sys_id;
+									}
+
+									grVulSw.insert();
+
+									vulswf = true;
+								}
+
+							}
+							//Software Installation
+							var grSwInst = new GlideRecord('cmdb_sam_sw_install');
+							var swinstf=true;
+							if(!grSwInst.get('sys_id',pkgDevicePkgID))
+							{
+								swinstf=false;
+								grSwInst = new GlideRecord('cmdb_sam_sw_install');
+
+								var querySwInst ="discovery_model="+grSwDiscMod.sys_id+"^installed_on="+grComputer.sys_id+"";
+								grSwInst.addEncodedQuery(querySwInst);
+								grSwInst.query();
+
+								while (grSwInst.next()) {
+									swinstf=true;
+									break;
+								}
+
+								if(!swinstf && vCreateSwInst)
+								{
+									grSwInst.initialize();
+
+									if(swdiscmodf)
+									{
+										grSwInst.discovery_model=grSwDiscMod.sys_id;
+									}
+									if(compf)
+									{
+										grSwInst.installed_on=grComputer.sys_id;
+									}
+
+									grSwInst.display_name=pkgDisplayName;
+									grSwInst.publisher=pkgManufacturer;
+									grSwInst.version=pkgVersion;
+
+									if(content[i]._source.cpe_Product != "*")
+									{
+										if(content[i]._source.cpe_Edition != "*")
+										{
+											grSwInst.normalized_display_name=content[i]._source.cpe_Product+" "+content[i]._source.cpe_Edition;
+										}
+										else
+										{
+											grSwInst.normalized_display_name=content[i]._source.cpe_Product;
+										}
+									}
+									else
+									{
+										grSwInst.normalized_display_name="";
+									}
+
+									if(content[i]._source.cpe_Manufacturer != "*")
+									{
+										grSwInst.normalized_publisher=content[i]._source.cpe_Manufacturer;
+									}
+									else
+									{
+										grSwInst.normalized_publisher="";
+									}
+
+									if(content[i]._source.cpe_Version != "*")
+									{
+										grSwInst.normalized_version=content[i]._source.cpe_Version;
+									}
+									else
+									{
+										grSwInst.normalized_version="";
+									}
+
+									grSwInst.insert();
+									swinstf = true;
+								}
+
+							}
+							if(nvdf) // && vulswf && swinstf)
+							{
+								var vulnerability = grVulNvd.sys_id;
+								var sw_vulnerability = grVulSw.sys_id;
+								var installation = grSwInst.sys_id;
+
+								var grSNVulItem = new GlideRecord('sn_vul_vulnerable_item');
+
+								//var grSNVulItem = "cmdb_ci="+installed_on+"^cpe_uri_2_2="+cpe_uri_2_2+"^vulnerability"+cve_id+"";
+								//var querySNVulItem = "cmdb_ci="+installed_on+"^vulnerability="+vulnerability+"";
+								var snvulitem=false;
+								var querySNVulItem = "cmdb_ci="+installed_on+"^vulnerability="+vulnerability+"^sw_vulnerability="+sw_vulnerability+"";
+								grSNVulItem.addEncodedQuery(querySNVulItem);
+								grSNVulItem.query();
+
+								while (grSNVulItem.next()) {
+									snvulitem = true;
+									break;
+								}
+								
+								if(!snvulitem)
+								{
+									grSNVulItem = new GlideRecord('sn_vul_vulnerable_item');
+									querySNVulItem = "cmdb_ci="+installed_on+"^vulnerability="+vulnerability+"";
+									grSNVulItem.addEncodedQuery(querySNVulItem);
+									grSNVulItem.query();
+									
+									while (grSNVulItem.next()) {
+										snvulitem = true;
+										break;
+									}
+									
+									
+									if(!snvulitem)
+									{
+										grSNVulItem.cmdb_ci = installed_on;
+										grSNVulItem.vulnerability = vulnerability;
+										grSNVulItem.source = "fatstacks";
+										grSNVulItem.first_found = vLastRun;
+										//grSNVulItem.last_found = vLastRun;
+										//grSNVulItem.sw_vulnerability = sw_vulnerability;
+										//grSNVulItem.installation = installation;
+
+										//grSNVulItem.update();
+									}
+									
+									grSNVulItem.last_found = vLastRun;
+									grSNVulItem.sw_vulnerability = sw_vulnerability;
+									
+									if(grSNVulItem.installation=='')
+										grSNVulItem.installation = installation;
+
+									grSNVulItem.update();
+								}
+
+								
+							}
+						}
+					}
+				}
+				responseObj.responseBody = "1";
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+			responseObj.responseBody = ex.getMessage();
+		}
+		return responseObj;
+
+	},
+	
+	getPull: function(){
+		var responseBody = "";
+		try {
+			var callLog = new logTOsRTMS();
+			var grsetting = new GlideRecord('x_85303_srtms_settings');
+
+			grsetting.get('service','sRTMS');
+			var vURI = grsetting.url;
+			var vSessionToken = grsetting.sessiontoken;
+			var vCompanyName = grsetting.company_name;
+			var vJobName = vCompanyName.toLowerCase()+'-'+grsetting.job_name;
+			var vLastRun = grsetting.last_run;
+			var vPageNumber = 1;
+			var vCreateDevice = grsetting.create_missing_device;
+			var vCreateNvd = grsetting.create_missing_nvds;
+			var vCPEVersion = grsetting.cpe_version;
+			var vCreateCPE = grsetting.create_missing_cpes;
+			var vCreateSwDiscMod = grsetting.create_missing_software_discovery_models;
+			var vCreateSwInst = grsetting.create_missing_software_installation;
+			var vModule = grsetting.module;
+			var vPageSize = grsetting.fatstacks_api_page_size;
+			var vCreateMan = grsetting.create_missing_manufacturer;
+			var vCreateMod = grsetting.creaye_missing_model;
+			
+			var vSevCritical = grsetting.severity_critical;
+			var vSevHigh = grsetting.severity_high;
+			var vSevMedium = grsetting.severity_medium;
+			var vSevLow = grsetting.severity_low;
+			
+			var vAppVul = grsetting.application_vulnerabilities;
+			var vOsVul = grsetting.operating_system_vulnerabilities;
+
+			//Severity
+			var vSev = '';
+			
+			if(vSevCritical)
+				vSev='"Critical"';
+			
+			if(vSevHigh)
+				if(vSev!='')
+					vSev=vSev+',"High"';
+				else
+					vSev='"High"';
+			
+			if(vSevMedium)
+				if(vSev!='')
+					vSev=vSev+',"Medium"';
+				else
+					vSev='"Medium"';
+			
+			if(vSevLow)
+				if(vSev!='')
+					vSev=vSev+',"Low"';
+				else
+					vSev='"Low"';
+
+			if(vSev!='')
+				vSev=',{ "terms":  { "cvss_Severity": ['+vSev+']  }}';
+		
+			
+			//Part
+			var vPart = '';
+			
+			if(vAppVul)
+				vPart='"a"';
+			
+			if(vOsVul)
+				if(vPart!='')
+					vPart=vPart+',"o"';
+				else
+					vPart='"o"';
+			
+			if(vPart!='')
+				vPart=',{ "terms":  { "cpe_Part": ['+vPart+']  }}';
+			
+			
+			//API call
+			var getAPI = this.getAPI(vURI,vSessionToken,vJobName,vPageNumber,vLastRun,vCreateDevice,vCreateNvd,vCPEVersion,vCreateCPE,vCreateSwDiscMod,vCreateSwInst,vModule,vPageSize,vCreateMan,vCreateMod,vSev,vPart);
+			
+			responseBody = getAPI.responseBody;
+			
+			if(responseBody=="1")
+			{
+				grsetting.status = "Running - Pulling Data Total "+getAPI.totalElements +" (Page: "+getAPI.pageNumber+"/"+getAPI.totalPage+")";
+				grsetting.update();
+				
+				callLog.setLog(vLastRun,'Info','Pull','Pulling Data : '+getAPI.totalElements +" (Page: "+getAPI.pageNumber+"/"+getAPI.totalPage+")");
+
+				for (var i = 2;i <= getAPI.totalPage ; i++){
+					getAPI = this.getAPI(vURI,vSessionToken,vJobName,i,vLastRun,vCreateDevice,vCreateNvd,vCPEVersion,vCreateCPE,vCreateSwDiscMod,vCreateSwInst,vModule,vPageSize,vCreateMan,vCreateMod,vSev,vPart);
+					grsetting.status = "Running - Pulling Data Total "+getAPI.totalElements +" (Page: "+getAPI.pageNumber+"/"+getAPI.totalPage+")";
+					grsetting.update();
+
+					callLog.setLog(vLastRun,'Info','Pull','Pulling Data : '+getAPI.totalElements +" (Page: "+getAPI.pageNumber+"/"+getAPI.totalPage+")");
+
+					responseBody = getAPI.responseBody;
+				}
+			}
+			else
+			{
+				grsetting.status = "Stop - Pulling Data Total (No Results): "+responseBody;
+				grsetting.update();
+				
+				callLog.setLog(vLastRun,'Info','Pull','Stop - No Results: '+responseBody);
+				
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+		}
+		
+		return responseBody;
+	},
+	
+    type: 'pullFROMsRTMS'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-01-13 06:03:51</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>05232f59db90320058925901cf961906</sys_id>
+        <sys_mod_count>179</sys_mod_count>
+        <sys_name>pullFROMsRTMS</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_script_include_05232f59db90320058925901cf961906</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-15 23:23:51</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="servicenow_source_status" label="ServiceNow Source Status" language="en" table="x_85303_srtms_settings">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>servicenow_source_status</element>
+            <help/>
+            <hint/>
+            <label>ServiceNow Source Status</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <plural>ServiceNow Source Status</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-10 23:03:23</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_id>4aaea9d3db2e320058925901cf961989</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>ServiceNow Source Status</sys_name>
+            <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+            <sys_update_name>sys_documentation_x_85303_srtms_settings_servicenow_source_status_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-10 23:03:23</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

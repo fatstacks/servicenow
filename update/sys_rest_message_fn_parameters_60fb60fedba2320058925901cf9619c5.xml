@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>AWSSECRETACCESSKEY</name>
+        <rest_message_function display_value="Default POST">089aac7edba2320058925901cf9619b5</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-09 04:55:00</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>60fb60fedba2320058925901cf9619c5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AWSSECRETACCESSKEY</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_60fb60fedba2320058925901cf9619c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-09 17:16:48</sys_updated_on>
+        <type>string</type>
+        <value>O8qMYEqLhpKtAWhGBs3aHr5ooykWeKfK/u4qx5RS</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

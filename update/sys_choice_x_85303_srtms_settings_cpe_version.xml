@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="cpe_version" table="x_85303_srtms_settings" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>cpe_version</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>2.2</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-28 04:35:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dab4dc19db75320058925901cf96192a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-28 04:35:31</sys_updated_on>
+            <value>2.2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>cpe_version</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>2.3</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-28 04:35:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5ab4dc19db75320058925901cf96192b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-28 04:35:31</sys_updated_on>
+            <value>2.3</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>cpe_version</element>
+            <name>x_85303_srtms_settings</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-28 04:35:31</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>7cf5edf5db3232000a7addd0cf96193f</sys_id>
+            <sys_mod_count>37</sys_mod_count>
+            <sys_name>cpe_version</sys_name>
+            <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+            <sys_update_name>sys_choice_x_85303_srtms_settings_cpe_version</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-12 22:36:33</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

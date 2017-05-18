@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="cpe_uri_2_3" label="cpe_URI_2_3" language="en" table="x_85303_srtms_productcve">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>cpe_uri_2_3</element>
+            <help/>
+            <hint/>
+            <label>cpe_URI_2_3</label>
+            <language>en</language>
+            <name>x_85303_srtms_productcve</name>
+            <plural>cpe_URI_2_3s</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-01-13 23:06:37</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_id>206dcb29db58320058925901cf961996</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>cpe_URI_2_3</sys_name>
+            <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+            <sys_update_name>sys_documentation_x_85303_srtms_productcve_cpe_uri_2_3_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-01-13 23:06:37</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

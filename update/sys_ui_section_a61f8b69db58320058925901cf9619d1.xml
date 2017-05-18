@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="ProductCVE" section_id="a61f8b69db58320058925901cf9619d1" sys_domain="global" table="x_85303_srtms_productcve" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpe_uri_2_2</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>05ac15bddbb5720058925901cf961959</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpe_uri_2_3</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>85ac15bddbb5720058925901cf961959</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpe_manufacturer</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>09ac15bddbb5720058925901cf961959</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpe_product</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>89ac15bddbb5720058925901cf961959</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpe_version</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>0dac15bddbb5720058925901cf961959</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpe_update</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>8dac15bddbb5720058925901cf961959</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cpe_edition</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>01ac15bddbb5720058925901cf96195a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>81ac15bddbb5720058925901cf96195a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cve_id</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>05ac15bddbb5720058925901cf96195a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cvss_severity</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>85ac15bddbb5720058925901cf96195a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cvss_severity_base_score</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>09ac15bddbb5720058925901cf96195a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ispatch</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>89ac15bddbb5720058925901cf96195a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>last_run</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-03-29 23:06:41</sys_created_on>
+            <sys_id>0dac15bddbb5720058925901cf96195a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-03-29 23:06:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ispatchavailable</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-05 18:11:13</sys_created_on>
+            <sys_id>a1dbf2addbea320058925901cf961921</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-05 18:11:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>availablekb</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-05 18:11:14</sys_created_on>
+            <sys_id>71db3a21db2e320058925901cf9619d3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="ProductCVE" display_value="ProductCVE" name="x_85303_srtms_productcve" sys_domain="global" view="Default view">a61f8b69db58320058925901cf9619d1</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-05 18:11:14</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>ProductCVE</caption>
+            <header>false</header>
+            <name>x_85303_srtms_productcve</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-01-13 23:14:07</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a61f8b69db58320058925901cf9619d1</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_name>ProductCVE</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+            <sys_update_name>sys_ui_section_a61f8b69db58320058925901cf9619d1</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-01-17 18:27:42</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

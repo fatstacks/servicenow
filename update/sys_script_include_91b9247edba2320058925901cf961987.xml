@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_85303_srtms.triggerJobAwsTOsRTMS</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>triggerJobAwsTOsRTMS</name>
+        <script><![CDATA[var triggerJobAwsTOsRTMS = Class.create();
+triggerJobAwsTOsRTMS.prototype = {
+    initialize: function() {
+    },
+	
+	getTriggerJob: function(){
+		var responseBody = "";
+		try {
+			//var vURI = '';
+			
+			var grsetting = new GlideRecord('x_85303_srtms_settings');
+
+			grsetting.get('service','sRTMS');
+			var vURI = grsetting.url;
+			//var vLogin = grsetting.login;
+			//var vPwd = grsetting.password2.getDecryptedValue();
+			var vAwsAccessKey = grsetting.aws_access_key;
+			var vAwsSecretAccessKey = grsetting.aws_secret_access_key.getDecryptedValue();
+			var vSessionToken = grsetting.sessiontoken;
+			var vJobName = grsetting.job_name;
+			var vLastRun = grsetting.last_run;
+			var vS3StagingDir = grsetting.aws_s3_staging_directory;
+			var vRegion = grsetting.aws_region;
+			var vAthenaUrl = 'jdbc:awsathena://athena.'+vRegion+'.amazonaws.com:443/';
+			var vSchemaName = grsetting.aws_schema_name;
+			
+			var vDeviceSQL = grsetting.aws_device_sql;
+			var vPackageSQL = grsetting.aws_package_sql;
+			
+			if(vSchemaName!='')
+			{
+				vDeviceSQL = vDeviceSQL.replace(/<schema_name>./g,vSchemaName+'.');
+				vPackageSQL = vPackageSQL.replace(/<schema_name>./g,vSchemaName+'.');
+			}
+			else
+			{
+				vDeviceSQL = vDeviceSQL.replace(/<schema_name>./g,'');
+				vPackageSQL = vPackageSQL.replace(/<schema_name>./g,vSchemaName+'.');
+			}
+			
+			var r = new sn_ws.RESTMessageV2('sRTMS - Aws - JobTrigger', 'Default POST');
+			
+			r.setStringParameter('URI', vURI);
+			r.setStringParameter('AWSACCESSKEY', vAwsAccessKey);
+			r.setStringParameter('AWSSECRETACCESSKEY', vAwsSecretAccessKey);
+			r.setStringParameter('ATHENAURL', vAthenaUrl);
+			r.setStringParameter('S3STAGINGDIR', vS3StagingDir);
+			r.setStringParameterNoEscape('DEVICESQL', vDeviceSQL);
+			r.setStringParameterNoEscape('PACKAGESQL', vPackageSQL);
+			
+			r.setStringParameter('SESSIONTOKEN', vSessionToken);
+			r.setStringParameter('JOBNAME', vJobName);
+
+			var response = r.execute();
+			responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			
+			var js = JSON.parse(responseBody);
+			var error_code = js.error_code;
+			var success = js.success;
+			var callLog = new logTOsRTMS();
+			
+			if(httpStatus=="200" && error_code=="0" && success==true)
+			{	
+				var jobID = js.results.jobId;
+				grsetting.aws_job_id = jobID;
+				grsetting.update();
+				
+				
+				callLog.setLog(vLastRun,'Info','Trigger','AWS JobID: '+jobID);
+				
+				//responseBody="1";
+				responseBody="1";
+			}
+			else
+			{
+					callLog.setLog(vLastRun,'Info','Trigger','Error: '+responseBody);
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+		}
+		
+		return responseBody;
+	},
+	
+    type: 'triggerJobAwsTOsRTMS'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-09 04:46:15</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>91b9247edba2320058925901cf961987</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>triggerJobAwsTOsRTMS</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_script_include_91b9247edba2320058925901cf961987</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-10 23:26:09</sys_updated_on>
+    </sys_script_include>
+</record_update>

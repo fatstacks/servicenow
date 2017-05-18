@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="AWS Source" section_id="22f0247adba2320058925901cf961977" sys_domain="global" table="x_85303_srtms_settings" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>aws_source</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:46:15</sys_created_on>
+            <sys_id>fe7c57b6db22320058925901cf961964</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="AWS Source" display_value="AWS Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">22f0247adba2320058925901cf961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:46:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>aws_access_key</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:46:15</sys_created_on>
+            <sys_id>727c57b6db22320058925901cf961965</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="AWS Source" display_value="AWS Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">22f0247adba2320058925901cf961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:46:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>aws_secret_access_key</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:46:15</sys_created_on>
+            <sys_id>f27c57b6db22320058925901cf961965</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="AWS Source" display_value="AWS Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">22f0247adba2320058925901cf961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:46:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>aws_device_sql</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:46:15</sys_created_on>
+            <sys_id>767c57b6db22320058925901cf961965</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="AWS Source" display_value="AWS Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">22f0247adba2320058925901cf961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:46:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:46:15</sys_created_on>
+            <sys_id>f67c57b6db22320058925901cf961965</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="AWS Source" display_value="AWS Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">22f0247adba2320058925901cf961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:46:15</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>aws_region</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:46:15</sys_created_on>
+            <sys_id>7a7c57b6db22320058925901cf961965</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="AWS Source" display_value="AWS Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">22f0247adba2320058925901cf961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:46:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>aws_s3_staging_directory</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:46:15</sys_created_on>
+            <sys_id>fa7c57b6db22320058925901cf961965</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="AWS Source" display_value="AWS Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">22f0247adba2320058925901cf961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:46:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>aws_schema_name</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:46:15</sys_created_on>
+            <sys_id>7e7c57b6db22320058925901cf961965</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="AWS Source" display_value="AWS Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">22f0247adba2320058925901cf961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:46:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>aws_package_sql</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:46:15</sys_created_on>
+            <sys_id>fe7c57b6db22320058925901cf961965</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="AWS Source" display_value="AWS Source" name="x_85303_srtms_settings" sys_domain="global" view="Default view">22f0247adba2320058925901cf961977</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:46:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>AWS Source</caption>
+            <header>false</header>
+            <name>x_85303_srtms_settings</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:07:01</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>22f0247adba2320058925901cf961977</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_name>AWS Source</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+            <sys_update_name>sys_ui_section_22f0247adba2320058925901cf961977</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:19:14</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

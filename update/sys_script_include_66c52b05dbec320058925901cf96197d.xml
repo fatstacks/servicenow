@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_85303_srtms.statusJobTOsRTMS</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>statusJobTOsRTMS</name>
+        <script><![CDATA[var statusJobTOsRTMS = Class.create();
+statusJobTOsRTMS.prototype = {
+    initialize: function() {
+    },
+
+	getSingleStatusJob: function(vSrc){
+		var responseBody = "";
+		try {
+			//var vURI = '';
+			
+			var grsetting = new GlideRecord('x_85303_srtms_settings');
+
+			grsetting.get('service','sRTMS');
+			var vURI = grsetting.url;
+			var vSessionToken = grsetting.sessiontoken;
+			
+			var vJobID = "";
+			var vJobSource = "";
+			var vLastRun = grsetting.last_run;
+			
+			if(vSrc=="ServiceNow")
+			{
+				vJobID = grsetting.jobid;
+				vJobSource = "service-now";
+			}
+			if(vSrc=="Aws")
+			{
+				vJobID = grsetting.aws_job_id;
+				vJobSource = "aws-ec2";
+			}
+			
+			var r = new sn_ws.RESTMessageV2('sRTMS - JobStatus', 'Default GET');
+			
+			r.setStringParameter('URI', vURI);
+			r.setStringParameter('SESSIONTOKEN', vSessionToken);
+			r.setStringParameter('JOBID', vJobID);
+			r.setStringParameter('JOBSOURCE', vJobSource);
+			
+			var response = r.execute();
+			responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			
+			var js = JSON.parse(responseBody);
+			var error_code = js.error_code;
+			var success = js.success;
+									
+			if(httpStatus=="200" && error_code=="0" && success==true)
+			{	
+				var progress = js.results.progress;
+				var status = js.results.status;
+				grsetting.status = "sRTMS Processing "+vSrc+" Data: "+progress;
+				grsetting.status_internal = status;
+				grsetting.update();
+				
+				var callLog = new logTOsRTMS();
+				callLog.setLog(vLastRun,'Info','Status','Processing '+vSrc+' Data : '+progress);
+				
+				
+				if (status=="Done")
+				{
+					responseBody="1";
+					//return responseBody;
+				}
+				else if (status=="Progress")
+				{
+					responseBody="2";
+					//return responseBody;
+				}
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+		}
+		
+		return responseBody;
+	},
+	
+	getStatusJob: function(){
+		var responseBody = "";
+		try {
+			
+			var callLog = new logTOsRTMS();
+			var grsetting = new GlideRecord('x_85303_srtms_settings');
+
+			grsetting.get('service','sRTMS');
+			var vSnowSrcStatus = grsetting.servicenow_source_status;
+			var vAwsSrcStatus = grsetting.aws_source_status;
+			
+			var getSnowStatusJob="1";
+			var getAwsStatusJob="1";
+			
+			if(vSnowSrcStatus)
+			{
+				getSnowStatusJob = this.getSingleStatusJob('ServiceNow');
+			}
+			if(vAwsSrcStatus)
+			{
+				getAwsStatusJob = this.getSingleStatusJob('Aws');
+			}
+			
+			if(getSnowStatusJob=="1" && getAwsStatusJob=="1")
+			{
+				responseBody = "1";
+			}
+			else if(getSnowStatusJob!="1")
+			{
+				responseBody = getSnowStatusJob;
+			}
+			else if(getAwsStatusJob!="1")
+			{
+				responseBody = getAwsStatusJob;
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+		}
+		
+		return responseBody;
+	},
+	
+    type: 'statusJobTOsRTMS'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-01-24 21:56:48</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>66c52b05dbec320058925901cf96197d</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>statusJobTOsRTMS</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_script_include_66c52b05dbec320058925901cf96197d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-11 22:16:29</sys_updated_on>
+    </sys_script_include>
+</record_update>

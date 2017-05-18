@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="aws_region" table="x_85303_srtms_settings" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>US East (N. Virginia)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>62a3e8badba2320058925901cf961904</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>us-east-1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>US East (Ohio)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>eea3e8badba2320058925901cf961904</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>us-east-2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>US West (N. California)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>2</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6aa3e8badba2320058925901cf961905</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>us-west-1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>US West (Oregon)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>3</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e2a3e8badba2320058925901cf961906</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>us-west-2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Canada (Central)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>4</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6ea3e8badba2320058925901cf961906</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>ca-central-1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>EU (Ireland)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>5</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e6a3e8badba2320058925901cf961907</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>eu-west-1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>EU (Frankfurt)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>6</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>62a3e8badba2320058925901cf961908</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>eu-central-1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>EU (London)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>7</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>eaa3e8badba2320058925901cf961908</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>eu-west-2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Asia Pacific (Singapore)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>8</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>66a3e8badba2320058925901cf961909</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>ap-southeast-1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Asia Pacific (Sydney)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>9</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>eea3e8badba2320058925901cf961909</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>ap-southeast-2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Asia Pacific (Seoul)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>10</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6aa3e8badba2320058925901cf96190a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>ap-northeast-2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Asia Pacific (Tokyo)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>11</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>62a3e8badba2320058925901cf961924</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>ap-northeast-1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Asia Pacific (Mumbai)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>12</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>eaa3e8badba2320058925901cf961924</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>ap-south-1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>aws_region</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>South America (Sao Paulo)</label>
+            <language>en</language>
+            <name>x_85303_srtms_settings</name>
+            <sequence>13</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>66a3e8badba2320058925901cf961925</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 04:18:46</sys_updated_on>
+            <value>sa-east-1</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>aws_region</element>
+            <name>x_85303_srtms_settings</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 04:18:46</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>b0f5edf5db3232000a7addd0cf961929</sys_id>
+            <sys_mod_count>7</sys_mod_count>
+            <sys_name>aws_region</sys_name>
+            <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+            <sys_update_name>sys_choice_x_85303_srtms_settings_aws_region</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-12 22:36:37</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

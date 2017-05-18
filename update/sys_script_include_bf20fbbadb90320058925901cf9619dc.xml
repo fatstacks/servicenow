@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_85303_srtms.deleteOldRecords</api_name>
+        <client_callable>false</client_callable>
+        <description>Delete Old Records</description>
+        <name>deleteOldRecords</name>
+        <script><![CDATA[var deleteOldRecords = Class.create();
+deleteOldRecords.prototype = {
+    initialize: function() {
+    },
+	
+	getDelete: function(){
+		var responseBody = "";
+		try {
+			
+			var grsetting = new GlideRecord('x_85303_srtms_settings');
+
+			grsetting.get('service','sRTMS');
+			var vLastRun = grsetting.last_run;
+			
+			var grProductCVE = new GlideRecord('x_85303_srtms_productcve');
+			var queryProductCVE = "last_run!="+vLastRun+"";
+			grProductCVE.addEncodedQuery(queryProductCVE);
+			grProductCVE.query();
+			
+			var callLog = new logTOsRTMS();
+			callLog.setLog(vLastRun,'Info','Delete Old Records','Start');
+			
+			while (grProductCVE.next()) {
+				//gs.addInfoMessage(gr.number);
+				grProductCVE.deleteRecord();
+			}
+			
+			callLog.setLog(vLastRun,'Info','Delete Old Records','End');
+			
+			responseBody="1";
+			
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+		}
+		
+		return responseBody;
+	},
+	
+    type: 'deleteOldRecords'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-01-17 22:54:18</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>bf20fbbadb90320058925901cf9619dc</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>deleteOldRecords</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_script_include_bf20fbbadb90320058925901cf9619dc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-02-02 04:09:02</sys_updated_on>
+    </sys_script_include>
+</record_update>

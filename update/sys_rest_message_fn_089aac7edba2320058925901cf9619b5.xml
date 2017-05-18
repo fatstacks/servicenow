@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+  "jobName":"${JOBNAME}",&#13;
+  "userName":"${AWSACCESSKEY}",&#13;
+  "password":"${AWSSECRETACCESSKEY}",&#13;
+  "athenaUrl":"${ATHENAURL}",&#13;
+  "s3StagingDir":"${S3STAGINGDIR}",&#13;
+  "deviceSQL":"${DEVICESQL}",&#13;
+  "packageSQL":"${PACKAGESQL}"&#13;
+}</content>
+        <function_name>Default POST</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>sRTMS - Aws - JobTrigger [ Default POST ]</qualified_name>
+        <rest_endpoint>${URI}/job-rest-service/aws-ec2/job </rest_endpoint>
+        <rest_message display_value="sRTMS - Aws - JobTrigger">3b0aec7edba2320058925901cf961955</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-09 04:50:05</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>089aac7edba2320058925901cf9619b5</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Default POST</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_rest_message_fn_089aac7edba2320058925901cf9619b5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-09 21:37:18</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>
