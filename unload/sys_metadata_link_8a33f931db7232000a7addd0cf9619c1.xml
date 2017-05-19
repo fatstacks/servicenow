@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload</directory>
+        <documentkey>d5f5edf5db3232000a7addd0cf9619f3</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_85303_srtms_settings">
+    <x_85303_srtms_settings action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <application_vulnerabilities>true</application_vulnerabilities>
+        <aws_access_key/>
+        <aws_device_sql>SELECT res.instanceid as DeviceID,'' as DeviceDomain,res.computername DeviceName,'' as UserDomain,'' as UserName,'' as IPAddress,'' as MacAddress,'' as LastScan,'' as Active,1 as IsVirtual,'' as IsLPAR,'' as Manufacturer,'' as Model, res.instanceid as SerialNumber,'' as OSManufacturer,res.platformname as OSName,'' as OSServicePack,res.platformversion as OSVersion,'' as OSBuildNumber,'' as OSBit,'' as OSInstallDate,'' as NumPhysicalCPUs,'' as NumLogicalCPUs,'' as NumCores,'' as CPUBit FROM &lt;schema_name&gt;.aws_instanceinformation res</aws_device_sql>
+        <aws_job_id/>
+        <aws_package_sql>SELECT app.resourceID as DeviceID,'' as PkgID,app.publisher as PkgManufacturer,app.name as PkgDisplayName,app.version as PkgVersion,CASE app.architecture WHEN 'i386' THEN '32' WHEN 'x86_64' THEN '64' ELSE app.architecture END as PkgBit,app.installedtime as InstallDate FROM &lt;schema_name&gt;.aws_application app UNION ALL SELECT kb.resourceID as DeviceID, kb.hotfixid as PkgID,'' as PkgManufacturer,'' as PkgDisplayName,'' as PkgVersion,'' as PkgBit,kb.installedtime as InstallDate FROM &lt;schema_name&gt;.aws_windowsupdate kb</aws_package_sql>
+        <aws_region/>
+        <aws_s3_staging_directory/>
+        <aws_schema_name/>
+        <aws_secret_access_key/>
+        <aws_source>false</aws_source>
+        <aws_source_status>false</aws_source_status>
+        <company_name/>
+        <connect_data>All</connect_data>
+        <connect_mode>Full</connect_mode>
+        <cpe_version>2.2</cpe_version>
+        <create_missing_cpes>false</create_missing_cpes>
+        <create_missing_device>false</create_missing_device>
+        <create_missing_manufacturer>false</create_missing_manufacturer>
+        <create_missing_nvds>false</create_missing_nvds>
+        <create_missing_software_discovery_models>false</create_missing_software_discovery_models>
+        <create_missing_software_installation>false</create_missing_software_installation>
+        <creaye_missing_model>false</creaye_missing_model>
+        <day>4</day>
+        <delete_old_records_automatically>true</delete_old_records_automatically>
+        <device_list_id_name/>
+        <fatstacks_api_page_size>1000</fatstacks_api_page_size>
+        <job_name>now</job_name>
+        <jobid/>
+        <last_run/>
+        <last_x_devices>100</last_x_devices>
+        <license/>
+        <login/>
+        <module>All</module>
+        <operating_system_vulnerabilities>false</operating_system_vulnerabilities>
+        <password/>
+        <password2/>
+        <run>Daily</run>
+        <run_day_of_month>8</run_day_of_month>
+        <run_period2>1970-01-11 23:23:23</run_period2>
+        <run_start>2017-02-02 09:00:00</run_start>
+        <run_type>daily</run_type>
+        <schedule>false</schedule>
+        <scheduler_active_inactive>false</scheduler_active_inactive>
+        <service>sRTMS</service>
+        <servicenow>true</servicenow>
+        <servicenow_api_page_size>100</servicenow_api_page_size>
+        <servicenow_login/>
+        <servicenow_password/>
+        <servicenow_source_status>false</servicenow_source_status>
+        <sessiontoken/>
+        <severity_critical>true</severity_critical>
+        <severity_high>true</severity_high>
+        <severity_low>false</severity_low>
+        <severity_medium>false</severity_medium>
+        <status/>
+        <status_internal/>
+        <sys_created_by></sys_created_by>
+        <sys_created_on></sys_created_on>
+        <sys_id></sys_id>
+        <sys_mod_count></sys_mod_count>
+        <sys_updated_by></sys_updated_by>
+        <sys_updated_on></sys_updated_on>
+        <time></time>
+        <url>http://13.64.112.137:11000</url>
+    </x_85303_srtms_settings>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-18 17:48:08</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>8a33f931db7232000a7addd0cf9619c1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Created 2017-05-18 09:50:12</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_metadata_link_8a33f931db7232000a7addd0cf9619c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-18 21:55:12</sys_updated_on>
+        <tablename>x_85303_srtms_settings</tablename>
+    </sys_metadata_link>
+</record_update>
