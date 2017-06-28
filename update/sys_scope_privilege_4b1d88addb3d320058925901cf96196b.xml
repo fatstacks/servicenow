@@ -7,7 +7,7 @@
         <sys_class_name>sys_scope_privilege</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-03-28 22:40:44</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>4b1d88addb3d320058925901cf96196b</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>cmdb_sam_sw_install</sys_name>

@@ -38,7 +38,7 @@ if(responseBody != "1")
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-12-21 23:45:27</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>d1093092dbf7620058925901cf961988</sys_id>
         <sys_mod_count>1181</sys_mod_count>
         <sys_name>schedulerRunSRTMS</sys_name>

@@ -103,7 +103,7 @@ triggerJobSnowTOsRTMS.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-24 21:26:11</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>68de53c1dbec320058925901cf961951</sys_id>
         <sys_mod_count>41</sys_mod_count>
         <sys_name>triggerJobSnowTOsRTMS</sys_name>

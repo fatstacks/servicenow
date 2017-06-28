@@ -14,7 +14,7 @@
         <runtime_access_tracking>permissive</runtime_access_tracking>
         <scope>x_85303_srtms</scope>
         <scoped_administration>false</scoped_administration>
-        <short_description/>
+        <short_description>fatstacks is Vulnerability Intelligence. It tells you what needs to be patched first, and where.</short_description>
         <source>x_85303_srtms</source>
         <store_correlation_id/>
         <store_url/>
@@ -23,14 +23,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-12-15 05:26:50</sys_created_on>
         <sys_id>6db446c0dbff220058925901cf9619cd</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-18 21:55:24</sys_updated_on>
+        <sys_updated_on>2017-06-28 22:01:34</sys_updated_on>
         <template/>
         <trackable>true</trackable>
-        <user_role/>
+        <user_role display_value="x_85303_srtms.srtms_admin" name="x_85303_srtms.srtms_admin">9594fd43dba3320058925901cf96198f</user_role>
         <vendor/>
         <vendor_prefix/>
-        <version>4.1.0</version>
+        <version>4.1.2</version>
     </sys_app>
 </record_update>

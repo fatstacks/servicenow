@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<record_update node_type="sys_grid_canvas" unload_date="2017-05-19 16:23:55">
+<record_update node_type="sys_grid_canvas" unload_date="2017-06-28 23:03:52">
     <sys_grid_canvas action="INSERT_OR_UPDATE">
         <legacy_page/>
         <name>PA New Tab 2</name>
         <sys_class_name>sys_grid_canvas</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-11 23:27:32</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>23fe7485db10320058925901cf961970</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>PA New Tab 2</sys_name>

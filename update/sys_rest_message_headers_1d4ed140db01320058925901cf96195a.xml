@@ -6,7 +6,7 @@
         <sys_class_name>sys_rest_message_headers</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-02-15 05:57:41</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>1d4ed140db01320058925901cf96195a</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>X-MS-VERSION</sys_name>

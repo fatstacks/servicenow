@@ -39,7 +39,7 @@ logTOsRTMS.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-26 00:02:05</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>6f0d4525dbe8720058925901cf96191d</sys_id>
         <sys_mod_count>5</sys_mod_count>
         <sys_name>logTOsRTMS</sys_name>

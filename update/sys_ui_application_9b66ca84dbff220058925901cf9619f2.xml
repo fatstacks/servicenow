@@ -5,11 +5,11 @@
         <hint/>
         <name>ProductCVE</name>
         <order/>
-        <roles>x_85303_srtms.installed_on_user</roles>
+        <roles/>
         <sys_class_name>sys_ui_application</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-12-15 05:34:19</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9b66ca84dbff220058925901cf9619f2</sys_id>
