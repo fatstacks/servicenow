@@ -12,7 +12,7 @@
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2017-01-13 23:06:37</sys_created_on>
-            <sys_customer_update>true</sys_customer_update>
+            <sys_customer_update>false</sys_customer_update>
             <sys_id>246dcb29db58320058925901cf96199c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>cvss_Severity_Base_Score</sys_name>

@@ -6,7 +6,7 @@
         <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-03-03 00:10:21</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>2e386649db51320058925901cf9619ec</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>SNOWLOGIN</sys_name>

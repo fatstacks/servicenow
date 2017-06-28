@@ -17,7 +17,7 @@
         <sys_class_name>sys_rest_message_fn</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-24 20:56:53</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>77291301dbec320058925901cf96193a</sys_id>
         <sys_mod_count>3</sys_mod_count>
         <sys_name>Default GET</sys_name>

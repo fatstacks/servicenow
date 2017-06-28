@@ -52,8 +52,8 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-25 00:15:42</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
-        <sys_id>ee76c495db20720058925901cf961913</sys_id>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>2632b1cfdb63320058925901cf9619fd</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Company Name</sys_name>
         <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
@@ -61,8 +61,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
         <sys_update_name>sys_dictionary_x_85303_srtms_settings_company_name</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-01-25 00:15:42</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2017-06-28 21:43:39</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

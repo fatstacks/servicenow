@@ -52,7 +52,7 @@ deleteOldRecords.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-17 22:54:18</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>bf20fbbadb90320058925901cf9619dc</sys_id>
         <sys_mod_count>7</sys_mod_count>
         <sys_name>deleteOldRecords</sys_name>

@@ -99,7 +99,7 @@ triggerJobAwsTOsRTMS.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-05-09 04:46:15</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>91b9247edba2320058925901cf961987</sys_id>
         <sys_mod_count>13</sys_mod_count>
         <sys_name>triggerJobAwsTOsRTMS</sys_name>

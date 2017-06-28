@@ -7,7 +7,7 @@
         <sys_class_name>sys_scope_privilege</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-12-20 02:02:53</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>baf58be5db37220058925901cf96199c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>GlideRecord.insert</sys_name>

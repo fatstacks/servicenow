@@ -28,7 +28,7 @@
         <sys_class_name>sys_rest_message_fn</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-24 20:44:17</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>8e06978ddbac320058925901cf96193b</sys_id>
         <sys_mod_count>15</sys_mod_count>
         <sys_name>Default POST</sys_name>

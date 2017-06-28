@@ -150,7 +150,7 @@ processSRTMS.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-24 23:51:35</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>d8ffffc1db20720058925901cf961976</sys_id>
         <sys_mod_count>33</sys_mod_count>
         <sys_name>processSRTMS</sys_name>
