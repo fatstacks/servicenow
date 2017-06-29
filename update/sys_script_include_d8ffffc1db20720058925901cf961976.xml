@@ -24,6 +24,7 @@ processSRTMS.prototype = {
 			var vDeleteOldRec = grsetting.delete_old_records_automatically;
 			var vSnowSrc = grsetting.servicenow;
 			var vAwsSrc = grsetting.aws_source;
+			var vSplunkSrc = grsetting.splunk_source;
 			grsetting.status = "Running";
 			grsetting.update();
 
@@ -53,6 +54,19 @@ processSRTMS.prototype = {
 					}
 				}
 				
+				if(vSplunkSrc)
+				{
+
+					//callLog.setLog('','Info','Trigger sRTMS Job','Start Job');
+					var trigJobSplunk = new triggerJobSplunkTOsRTMS();
+					var responseTrigJobSplunk = trigJobSplunk.getTriggerJob();
+					if(responseTrigJobSplunk != "1")
+					{
+						responseBody = responseTrigJobSplunk;
+						return responseBody;
+					}
+				}
+				
 				if(vAwsSrc)
 				{
 
@@ -65,11 +79,13 @@ processSRTMS.prototype = {
 						return responseBody;
 					}
 				}
+							
 				
-				if(vSnowSrc || vAwsSrc)
+				if(vSnowSrc || vSplunkSrc ||vAwsSrc)
 				{
 					//Saving Source Status
 					grsetting.servicenow_source_status = grsetting.servicenow;
+					grsetting.splunk_source_status = grsetting.splunk_source;
 					grsetting.aws_source_status = grsetting.aws_source;
 					grsetting.update();
 
@@ -150,9 +166,9 @@ processSRTMS.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-24 23:51:35</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_id>d8ffffc1db20720058925901cf961976</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>processSRTMS</sys_name>
         <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
         <sys_policy>read</sys_policy>
@@ -160,6 +176,6 @@ processSRTMS.prototype = {
         <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
         <sys_update_name>sys_script_include_d8ffffc1db20720058925901cf961976</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-11 22:22:41</sys_updated_on>
+        <sys_updated_on>2017-06-29 18:02:57</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -82,7 +82,7 @@
         <sys_class_name>sys_report</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-24 20:01:49</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>4d9c0b09dbac320058925901cf96190c</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>Affected Devices</sys_name>

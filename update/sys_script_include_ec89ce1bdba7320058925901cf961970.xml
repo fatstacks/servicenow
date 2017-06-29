@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_85303_srtms.triggerJobSplunkTOsRTMS</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>triggerJobSplunkTOsRTMS</name>
+        <script><![CDATA[var triggerJobSplunkTOsRTMS = Class.create();
+triggerJobSplunkTOsRTMS.prototype = {
+    initialize: function() {
+    },
+	
+	getTriggerJob: function(){
+		var responseBody = "";
+		try {
+			//var vURI = '';
+			
+			var grsetting = new GlideRecord('x_85303_srtms_settings');
+
+			grsetting.get('service','sRTMS');
+			var vURI = grsetting.url;
+
+			var vSplunkAPI = grsetting.splunk_api;
+			var vSplunkLogin = grsetting.splunk_login;
+			var vSplunkPassword = grsetting.splunk_password.getDecryptedValue();
+			var vSessionToken = grsetting.sessiontoken;
+			var vJobName = grsetting.job_name;
+			var vLastRun = grsetting.last_run;
+						
+			var vDeviceSearch = grsetting.device_search;
+			var vPackageSearch = grsetting.package_search;
+			
+			var r = new sn_ws.RESTMessageV2('sRTMS - Splunk - JobTrigger', 'Default POST');
+			
+			r.setStringParameter('URI', vURI);
+			r.setStringParameter('SPLUNKAPI', vSplunkAPI);
+			r.setStringParameter('SPLUNKLOGIN', vSplunkLogin);
+			r.setStringParameter('SPLUNKPASSWORD', vSplunkPassword);
+			r.setStringParameterNoEscape('DEVICESEARCH', vDeviceSearch);
+			r.setStringParameterNoEscape('PACKAGESEARCH', vPackageSearch);
+			
+			r.setStringParameter('SESSIONTOKEN', vSessionToken);
+			r.setStringParameter('JOBNAME', vJobName);
+
+			var response = r.execute();
+			responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			
+			var js = JSON.parse(responseBody);
+			var error_code = js.error_code;
+			var success = js.success;
+			var callLog = new logTOsRTMS();
+			
+			if(httpStatus=="200" && error_code=="0" && success==true)
+			{	
+				var jobID = js.results.jobId;
+				grsetting.splunk_job_id = jobID;
+				grsetting.update();
+				
+				
+				callLog.setLog(vLastRun,'Info','Trigger','Splunk JobID: '+jobID);
+				
+				//responseBody="1";
+				responseBody="1";
+			}
+			else
+			{
+					callLog.setLog(vLastRun,'Info','Trigger','Error: '+responseBody);
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			responseBody = ex.getMessage();
+		}
+		
+		return responseBody;
+	},
+	
+    type: 'triggerJobSplunkTOsRTMS'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-06-29 18:10:52</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>ec89ce1bdba7320058925901cf961970</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>triggerJobSplunkTOsRTMS</sys_name>
+        <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
+        <sys_update_name>sys_script_include_ec89ce1bdba7320058925901cf961970</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-06-29 19:12:12</sys_updated_on>
+    </sys_script_include>
+</record_update>

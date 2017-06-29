@@ -32,6 +32,11 @@ statusJobTOsRTMS.prototype = {
 				vJobID = grsetting.jobid;
 				vJobSource = "service-now";
 			}
+			if(vSrc=="Splunk")
+			{
+				vJobID = grsetting.splunk_job_id;
+				vJobSource = "splunk";
+			}
 			if(vSrc=="Aws")
 			{
 				vJobID = grsetting.aws_job_id;
@@ -94,27 +99,37 @@ statusJobTOsRTMS.prototype = {
 
 			grsetting.get('service','sRTMS');
 			var vSnowSrcStatus = grsetting.servicenow_source_status;
+			var vSplunkSrcStatus = grsetting.splunk_source_status;
 			var vAwsSrcStatus = grsetting.aws_source_status;
 			
 			var getSnowStatusJob="1";
+			var getSplunkStatusJob="1";
 			var getAwsStatusJob="1";
 			
 			if(vSnowSrcStatus)
 			{
 				getSnowStatusJob = this.getSingleStatusJob('ServiceNow');
 			}
+			if(vSplunkSrcStatus)
+			{
+				getSplunkStatusJob = this.getSingleStatusJob('Splunk');
+			}
 			if(vAwsSrcStatus)
 			{
 				getAwsStatusJob = this.getSingleStatusJob('Aws');
 			}
 			
-			if(getSnowStatusJob=="1" && getAwsStatusJob=="1")
+			if(getSnowStatusJob=="1" && getSplunkStatusJob=="1" && getAwsStatusJob=="1")
 			{
 				responseBody = "1";
 			}
 			else if(getSnowStatusJob!="1")
 			{
 				responseBody = getSnowStatusJob;
+			}
+			else if(getSplunkStatusJob!="1")
+			{
+				responseBody = getSplunkStatusJob;
 			}
 			else if(getAwsStatusJob!="1")
 			{
@@ -134,9 +149,9 @@ statusJobTOsRTMS.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-24 21:56:48</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_id>66c52b05dbec320058925901cf96197d</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>statusJobTOsRTMS</sys_name>
         <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
         <sys_policy>read</sys_policy>
@@ -144,6 +159,6 @@ statusJobTOsRTMS.prototype = {
         <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
         <sys_update_name>sys_script_include_66c52b05dbec320058925901cf96197d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-11 22:16:29</sys_updated_on>
+        <sys_updated_on>2017-06-29 19:12:44</sys_updated_on>
     </sys_script_include>
 </record_update>

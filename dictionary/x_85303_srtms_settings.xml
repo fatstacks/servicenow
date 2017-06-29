@@ -72,6 +72,7 @@
         </element>
         <element default="true" label="Delete Old Records Automatically" max_length="40" name="delete_old_records_automatically" type="boolean"/>
         <element label="Device  List (ID/Name)" max_length="1024" name="device_list_id_name" type="string"/>
+        <element default="(index=windows OR index=os) (Type=Computer OR Type=OperatingSystem OR sourcetype=Unix:Version) earliest=-7d@d latest=now | stats values(host) as DeviceID values(Domain) as DeviceDomain values(ComputerName) as ComputerName max(_time) as LastScan values(Manufacturer) as Manufacturer values(Model) as Model values(OS) as OS values(os_name) as os_name values(ServicePack) as OSServicePack values(Version) as Version values(version) as version values(BuildNumber) as OSBuildNumber values(Architecture) as Architecture values(machine_architecture_name) as machine_architecture_name values(InstallDate) as OSInstallDate by host | eval LastScan=strftime(LastScan,\&quot;%F %T\&quot;), OSInstallDate=strftime(strptime(OSInstallDate,\&quot;%Y%m%d%H%M%S.000000+000\&quot;),\&quot;%F %T\&quot;), DeviceName=coalesce(ComputerName,DeviceID), OSName=coalesce(OS,os_name), OSVersion=coalesce(Version,version), OSBit=coalesce(Architecture,machine_architecture_name) | fields DeviceID DeviceDomain DeviceName LastScan Manufacturer Model OSName OSServicePack OSVersion OSBuildNumber OSBit OSInstallDate" label="Device Search" max_length="2048" name="device_search" type="string"/>
         <element default="200" label="API Page Size" max_length="40" name="fatstacks_api_page_size" type="integer"/>
         <element label="JobID" max_length="100" name="jobid" type="string"/>
         <element label="Job Name" max_length="255" name="job_name" type="string"/>
@@ -97,6 +98,7 @@
             </choice>
         </element>
         <element label="Operating System Vulnerabilities" max_length="40" name="operating_system_vulnerabilities" type="boolean"/>
+        <element default="(index=Windows OR index=os) (sourcetype=Script:InstalledApps OR sourcetype=package) earliest=-7d@d latest=now | multikv | makemv delim=\&quot;\\\&quot;\&quot; DisplayName | eval PkgManufacturer0=coalesce(Publisher,VENDOR), PkgDisplayName0=coalesce(DisplayName,NAME), PkgVersion0=coalesce(DisplayVersion,VERSION) | stats values(host) as DeviceID values(PkgManufacturer0) as PkgManufacturer, values(PkgDisplayName0) as PkgDisplayName values(PkgVersion0) as PkgVersion, values(ARCH) as PkgBit values(InstallDate) as InstallDate count by host, PkgManufacturer0, PkgDisplayName0, PkgVersion0 | fields DeviceID PkgManufacturer PkgDisplayName PkgVersion PkgBit InstallDate" label="Package Search" max_length="2048" name="package_search" type="string"/>
         <element label="Password" max_length="255" name="password" type="password"/>
         <element label="Password" max_length="255" name="password2" type="password2"/>
         <element choice="1" label="Run(old)" max_length="40" name="run" type="choice">
@@ -161,6 +163,12 @@
         <element default="true" label="Severity High" max_length="40" name="severity_high" type="boolean"/>
         <element label="Severity Low" max_length="40" name="severity_low" type="boolean"/>
         <element label="Severity Medium" max_length="40" name="severity_medium" type="boolean"/>
+        <element default="https://&lt;hostname&gt;:&lt;port&gt;" label="Splunk API" max_length="255" name="splunk_api" type="url"/>
+        <element label="Splunk Job Id" max_length="100" name="splunk_job_id" type="string"/>
+        <element label="Splunk Login" max_length="255" name="splunk_login" type="string"/>
+        <element label="Splunk Password" max_length="255" name="splunk_password" type="password2"/>
+        <element label="Splunk Source" max_length="40" name="splunk_source" type="boolean"/>
+        <element label="Splunk Source Status" max_length="40" name="splunk_source_status" type="boolean"/>
         <element label="Status" max_length="255" name="status" read_only="true" type="string"/>
         <element label="Status Internal" max_length="255" name="status_internal" type="string"/>
         <element label="Time" max_length="40" name="time" type="glide_time"/>

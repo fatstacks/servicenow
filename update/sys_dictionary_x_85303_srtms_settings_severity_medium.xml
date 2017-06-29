@@ -53,7 +53,7 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-05-06 18:49:32</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>ba32f1cfdb63320058925901cf961963</sys_id>
+        <sys_id>19c6824fdba3320058925901cf9619d1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Severity Medium</sys_name>
         <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
@@ -62,7 +62,7 @@
         <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
         <sys_update_name>sys_dictionary_x_85303_srtms_settings_severity_medium</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2017-06-28 21:43:49</sys_updated_on>
+        <sys_updated_on>2017-06-28 23:13:32</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
