@@ -49,7 +49,7 @@ triggerJobSnowTOsRTMS.prototype = {
 			}
 			
 			var vInstanceURL = gs.getProperty('glide.servlet.uri');
-			
+						
 			var r = new sn_ws.RESTMessageV2('sRTMS - Snow - JobTrigger', 'Default POST');
 			
 			r.setStringParameter('URI', vURI);
@@ -72,7 +72,7 @@ triggerJobSnowTOsRTMS.prototype = {
 			var error_code = js.error_code;
 			var success = js.success;
 			var callLog = new logTOsRTMS();
-			
+		
 			if(httpStatus=="200" && error_code=="0" && success==true)
 			{	
 				var jobID = js.results.jobId;
@@ -103,9 +103,9 @@ triggerJobSnowTOsRTMS.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-01-24 21:26:11</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
+        <sys_customer_update>true</sys_customer_update>
         <sys_id>68de53c1dbec320058925901cf961951</sys_id>
-        <sys_mod_count>41</sys_mod_count>
+        <sys_mod_count>45</sys_mod_count>
         <sys_name>triggerJobSnowTOsRTMS</sys_name>
         <sys_package display_value="sRTMS" source="x_85303_srtms">6db446c0dbff220058925901cf9619cd</sys_package>
         <sys_policy>read</sys_policy>
@@ -113,6 +113,6 @@ triggerJobSnowTOsRTMS.prototype = {
         <sys_scope display_value="sRTMS">6db446c0dbff220058925901cf9619cd</sys_scope>
         <sys_update_name>sys_script_include_68de53c1dbec320058925901cf961951</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-10 23:26:31</sys_updated_on>
+        <sys_updated_on>2017-06-30 20:48:22</sys_updated_on>
     </sys_script_include>
 </record_update>
